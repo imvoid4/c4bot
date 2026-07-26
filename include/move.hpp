@@ -9,6 +9,8 @@ constexpr int _BLANK = 0;
 constexpr int _RED = 1;
 constexpr int _YELLOW = 2;
 
+inline int playerWon = 0;
+
 inline bool MakeMove(int col, int player) {
     if (col < 0 || col >= 7) return false;
 
@@ -17,6 +19,7 @@ inline bool MakeMove(int col, int player) {
 
         if (board[index] == 0) {
             board[index] = player;
+            
             return true;
         }
     }
