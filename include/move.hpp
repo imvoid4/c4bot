@@ -11,6 +11,7 @@ inline int board[42];
 constexpr int _BLANK = 0;
 constexpr int _RED = 1;
 constexpr int _YELLOW = 2;
+constexpr int _DRAW = 3;
 
 inline int playerWon = 0;
 
