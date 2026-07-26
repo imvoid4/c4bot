@@ -22,6 +22,8 @@ struct Move {
 
 inline vector<Move> moves;
 
+inline bool turn = false;
+
 inline bool InBounds(int row, int col) {
     return row >= 0 && row < 6 && col >= 0 && col < 7;
 }
@@ -77,6 +79,7 @@ inline bool MakeMove(int col, int player) {
             if (CheckWin(row, col)) {
                 playerWon = player;
             }
+            turn = !turn;
             return true;
         }
     }
@@ -87,4 +90,22 @@ inline void UnMove() {
     Move move = moves.back();
     moves.pop_back();
     board[move.row*7+move.col] = _BLANK;
+    turn = !turn;
+    playerWon = 0;
+}
+
+inline vector<Move> GetMoves() {
+    vector<Move> possibleMoves;
+
+    for (int col = 0; col < 7; col++) {
+        if (board[col] == _BLANK) {
+            possibleMoves.push_back({
+                turn ? _YELLOW : _RED,
+                -1,
+                col
+            });
+        }
+    }
+
+    return possibleMoves;
 }

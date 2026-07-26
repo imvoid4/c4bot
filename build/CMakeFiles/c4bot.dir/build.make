@@ -96,6 +96,8 @@ c4bot_EXTERNAL_OBJECTS =
 c4bot: CMakeFiles/c4bot.dir/main.cpp.o
 c4bot: CMakeFiles/c4bot.dir/build.make
 c4bot: CMakeFiles/c4bot.dir/compiler_depend.ts
+c4bot: /usr/lib/libGLX.so
+c4bot: /usr/lib/libOpenGL.so
 c4bot: CMakeFiles/c4bot.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/imlost/c4bot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable c4bot"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/c4bot.dir/link.txt --verbose=$(VERBOSE)
