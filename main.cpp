@@ -24,9 +24,10 @@ int main() {
         int previewX = (GetMouseX() / 50) * 50;
         DrawCircle(previewX+25, 25, 20, RED);
 
-        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && !turn) {
-            MakeMove(GetMouseX()/50, _RED);
-        }
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON) && !turn) MakeMove(GetMouseX()/50, _RED);
+
+        if (playerWon == 1) break;
+        if (playerWon == 2) break;
 
         EndDrawing();
     }
