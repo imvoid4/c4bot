@@ -5,6 +5,10 @@ inline int board[42];
 // 1: Red
 // 2: Yellow
 
+constexpr int BLANK = 0;
+constexpr int RED = 1;
+constexpr int YELLOW = 2;
+
 inline bool MakeMove(int col, int player) {
     if (col < 0 || col >= 7) return false;
 
@@ -16,10 +20,9 @@ inline bool MakeMove(int col, int player) {
             return true;
         }
     }
-
     return false;
 }
 
-inline bool UnMove(int row, int col) {
-    board[row*7+col] = 0;
+inline void UnMove(int row, int col) {
+    board[row*7+col] = BLANK;
 }
